@@ -17,8 +17,8 @@ A 36-key (3×5 + 3 thumbs per hand) ergonomic split keyboard layout design, desi
 GACS order, mirrored across hands:
 
 ```
-Left:   A = Sup   R = Alt   S = Ctl   T = Sft
-Right:  N = Sft   E = Ctl   I = Alt   O = Sup
+Left:   A = Sup   S = Alt   D = Ctl   F = Sft
+Right:  J = Sft   K = Ctl   L = Alt   ; = Sup
 ```
 
 Settings:
@@ -86,12 +86,12 @@ These do **not** apply to the Symbol layer (bilateral, no trigger-side hand).
 
 ## Layers
 
-### Base (Colemak)
+### Base (Qwerty)
 
 ```
-  Q      W      F      P      G          J      L      U      Y      ;
-  A      R      S      T      D          H      N      E      I      O
-  Z      X      C      V      B          K      M      ,      .      /
+  Q      W      E      R      T          Y      U      I      O      P
+  A      S      D      F      G          H      J      K      L      ;
+  Z      X      C      V      B          N      M      ,      .      /
 
                 Esc    Del    Bsp        Spc    Ent    Tab
 ```
@@ -151,7 +151,7 @@ additional `MO(SYM)` trigger (alongside the secondary thumbs).
 - No home-row mods (positions taken by symbols).
 - Brackets pair on adjacent positions: `[]` `{}` `()`.
 - Shifted-number positions preserved: `! @ # $ % ^ &` in their natural spots.
-- `< > ?` kept where they are as shifted `, . /` on Colemak.
+- `< > ?` kept where they are as shifted `, . /` on Qwerty.
 - `~ /` adjacent (left bottom) for shell paths.
 - `( )` adjacent on right index/middle for autocomplete-friendly typing.
 - `→` (right hand, bottom row index) is a TBD placeholder slot.
@@ -219,5 +219,4 @@ Ideas to consider after the base design has been used for a while:
 - **Numword** — sticky Number layer that auto-exits on non-numeric input.
 - **Combos** — multi-key chords; possible alternative trigger for the Nav layer (right + left primary thumbs).
 - **Swapper** — tri-state alt-tab window switching.
-- **Swap `;` and `'`** — make `'` the right-pinky home position; `;` moves to the symbol layer or top row.
 - **Move home-row mods to bottom row** — less mistrigger risk, but bottom row is more awkward to reach.

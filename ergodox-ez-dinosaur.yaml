@@ -17,12 +17,12 @@ layout:
   layout_name: LAYOUT_ergodox
 
 layers:
-  # Colemak with home-row mods (GACS) and layer-tap thumbs.
+  # Qwerty with home-row mods (GACS) and layer-tap thumbs.
   BASE:
     # left hand
     - ["=", "1", "2", "3", "4", "5", ""]
-    - [Tab, Q, W, F, P, G, SYM]
-    - [Esc, {t: A, h: Sup}, {t: R, h: Alt}, {t: S, h: Ctl}, {t: T, h: Sft}, D]
+    - [Tab, Q, W, E, R, T, SYM]
+    - [Esc, {t: A, h: Sup}, {t: S, h: Alt}, {t: D, h: Ctl}, {t: F, h: Sft}, G]
     - [Shift, Z, X, C, V, B, Sup]
     - ["`", Ctl, Alt, Left, Right]
     # left thumb
@@ -31,9 +31,9 @@ layers:
     - [{t: BSpace, h: SYM}, {t: Delete, h: NUM}, {t: Esc, h: MED}]
     # right hand
     - ["", "6", "7", "8", "9", "0", "-"]
-    - [SYM, J, L, U, Y, ";", "\\"]
-    - [H, {t: N, h: Sft}, {t: E, h: Ctl}, {t: I, h: Alt}, {t: O, h: Sup}, "'"]
-    - [Sup, K, M, ",", ".", "/", Shift]
+    - [SYM, Y, U, I, O, P, "\\"]
+    - [H, {t: J, h: Sft}, {t: K, h: Ctl}, {t: L, h: Alt}, {t: ";", h: Sup}, "'"]
+    - [Sup, N, M, ",", ".", "/", Shift]
     - [Up, Down, "[", "]", ""]
     # right thumb
     - [PgUp, PgDn]

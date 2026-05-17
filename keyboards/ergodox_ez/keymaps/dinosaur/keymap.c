@@ -23,14 +23,14 @@ enum tap_dance_indices {
 };
 
 // Home-row mod-tap aliases (GACS).
-#define HM_A LGUI_T(KC_A)
-#define HM_R LALT_T(KC_R)
-#define HM_S LCTL_T(KC_S)
-#define HM_T LSFT_T(KC_T)
-#define HM_N RSFT_T(KC_N)
-#define HM_E RCTL_T(KC_E)
-#define HM_I RALT_T(KC_I)
-#define HM_O RGUI_T(KC_O)
+#define HM_A    LGUI_T(KC_A)
+#define HM_S    LALT_T(KC_S)
+#define HM_D    LCTL_T(KC_D)
+#define HM_F    LSFT_T(KC_F)
+#define HM_J    RSFT_T(KC_J)
+#define HM_K    RCTL_T(KC_K)
+#define HM_L    RALT_T(KC_L)
+#define HM_SCLN RGUI_T(KC_SCLN)
 
 // Layer-tap thumb aliases. Layer is determined by the thumb POSITION:
 // primary → NUM/NAV, secondary → SYM (bilateral), tertiary → MED/FUN.
@@ -43,17 +43,17 @@ enum tap_dance_indices {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-// BASE — Colemak with home-row mods on the home row and layer-tap thumbs.
+// BASE — Qwerty with home-row mods on the home row and layer-tap thumbs.
 // Inner-column upper-alpha key is a bilateral MO(SYM), in addition to the
 // secondary-thumb LT_BSP/LT_SPC SYM triggers.
 [BASE] = LAYOUT_ergodox(
     // ---- LEFT HAND ----
     // Row 0 (top — extras above the alpha grid)
     KC_EQL,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,
-    // Row 1 (alphas Q W F P G at args 1..5; inner-column = MO(SYM))
-    KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    MO(SYM),
-    // Row 2 (alphas A R S T D at args 1..5; home-row mods)
-    KC_ESC,  HM_A,    HM_R,    HM_S,    HM_T,    KC_D,
+    // Row 1 (alphas Q W E R T at args 1..5; inner-column = MO(SYM))
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    MO(SYM),
+    // Row 2 (alphas A S D F G at args 1..5; home-row mods on A S D F)
+    KC_ESC,  HM_A,    HM_S,    HM_D,    HM_F,    KC_G,
     // Row 3 (alphas Z X C V B at args 1..5)
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LGUI,
     // Row 4 (extras below alphas)
@@ -73,12 +73,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ---- RIGHT HAND ----
     // Row 0 (top — extras)
     KC_NO,   KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-    // Row 1 (alphas J L U Y ; at args 1..5; inner-column = MO(SYM))
-    MO(SYM), KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLS,
-    // Row 2 (alphas H N E I O at args 0..4 — note: row 2 has only 6 args; outer-pinky extra is arg 5)
-             KC_H,    HM_N,    HM_E,    HM_I,    HM_O,    KC_QUOT,
-    // Row 3 (alphas K M , . / at args 1..5)
-    KC_RGUI, KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    // Row 1 (alphas Y U I O P at args 1..5; inner-column = MO(SYM))
+    MO(SYM), KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
+    // Row 2 (alphas H J K L ; at args 0..4 — note: row 2 has only 6 args; outer-pinky extra is arg 5)
+             KC_H,    HM_J,    HM_K,    HM_L,    HM_SCLN, KC_QUOT,
+    // Row 3 (alphas N M , . / at args 1..5)
+    KC_RGUI, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
     // Row 4 (extras)
                       KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC, KC_NO,
     // Right thumb cluster, args 0..5. See DESIGN.md §Thumbs for the role-to-key
