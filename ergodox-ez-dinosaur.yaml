@@ -67,9 +67,9 @@ layers:
   NAV:
     # left hand (active)
     - ["", "", "", "", "", "", ""]
-    - ["", Redo, Paste, Copy, Cut, Undo, ""]
-    - ["", Caps, Left, Down, Up, Right]
-    - ["", Ins, Home, PgDn, PgUp, End, ""]
+    - ["", Paste, Copy, Cut, Undo, Redo, ""]
+    - ["", Left, Down, Up, Right, Caps]
+    - ["", Home, PgDn, PgUp, End, Ins, ""]
     - ["", "", "", "", ""]
     # left thumb (stays as base)
     - ["", ""]

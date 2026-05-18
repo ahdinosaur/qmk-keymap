@@ -123,9 +123,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [NAV] = LAYOUT_ergodox(
     // ---- LEFT HAND (active) ----
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, C(S(KC_Z)), C(KC_V), C(KC_C), C(KC_X), C(KC_Z), KC_TRNS,
-    KC_TRNS, KC_CAPS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    KC_TRNS, KC_INS,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_TRNS,
+    KC_TRNS, C(KC_V), C(KC_C), C(KC_X), C(KC_Z), C(S(KC_Z)), KC_TRNS,
+    KC_TRNS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_CAPS,
+    KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_INS,  KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     // Left thumb (active-side, "stay as base"): all TRNS
                                                  KC_TRNS, KC_TRNS,

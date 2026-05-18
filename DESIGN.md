@@ -119,9 +119,9 @@ Hold left primary (Del). Active: right hand.
 Hold right primary (Ent). Active: left hand.
 
 ```
-  Redo   Paste  Copy   Cut    Undo       NO     NO     NO     NO     Boot
-  Caps   Left   Down   Up     Right      NO     Sft    Ctl    Alt    Sup
-  Ins    Home   PgDn   PgUp   End        NO     Lc     Lo     NO     NO
+  Paste  Copy   Cut    Undo   Redo       NO     NO     NO     NO     Boot
+  Left   Down   Up     Right  Caps       NO     Sft    Ctl    Alt    Sup
+  Home   PgDn   PgUp   End    Ins        NO     Lc     Lo     NO     NO
 
                 Esc    Del    Bsp        NO     --     NO
 ```
