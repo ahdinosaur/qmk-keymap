@@ -196,6 +196,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // SYM — Symbol layer (bilateral; triggers LT_BSP on left secondary OR LT_SPC on right secondary;
 // also MO(SYM) on inner-column upper-alpha row of either hand).
+//
+// `:` uses S(KC_P) (not KC_COLN = S(KC_SCLN)): the firmware sends QWERTY
+// scancodes, but the OS is Colemak/DH, which maps QWERTY's `;` position to
+// `o` — so S(KC_SCLN) would print capital O. QWERTY's P position maps to
+// `;` in Colemak/DH, so S(KC_P) yields `:`. Switch back to KC_COLN if the
+// OS keyboard layout is set to QWERTY.
 [SYM] = LAYOUT_ergodox(
     // ---- LEFT HAND ----
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -211,7 +217,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ---- RIGHT HAND ----
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_CIRC, KC_AMPR, KC_LBRC, KC_RBRC, KC_PIPE, KC_TRNS,
-             KC_COLN, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_TRNS,
+             S(KC_P), KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_TRNS,
     KC_TRNS, KC_BSLS, RIGHT_ARROW, KC_LT, KC_GT, KC_QUES, KC_TRNS,
                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     // Right thumb: extras TRNS; trigger LT_SPC (secondary, arg 5) TRNS; other LT thumbs NO
