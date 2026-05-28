@@ -1,0 +1,63 @@
+# keymap-drawer YAML for the `dinosaur` cheapino layout.
+#
+# Layer order and per-layer key order mirror the LAYOUT_split_3x5_3(...)
+# argument order in `keyboards/cheapino/keymaps/dinosaur/keymap.c`:
+#   30 alphas row-by-row (L pinky→inner then R inner→pinky),
+#   then 6 thumbs (L inside, L middle, L outside, R outside, R middle, R inside).
+# Labels are display strings only; see DESIGN.md for the rationale
+# behind each layer.
+#
+# Conventions:
+#   ""                  → KC_NO or KC_TRNS (no action / passthrough).
+#   {t: X, h: Y}        → tap X, hold Y (mod-taps and layer-taps).
+#   "Boot" "Lc" "Lo"    → tap-dance keys (double-tap activators).
+#   "Sup/Alt/Ctl/Sft"   → plain modifier keys.
+
+layout:
+  qmk_keyboard: cheapino
+  layout_name: LAYOUT_split_3x5_3
+
+layers:
+  # Qwerty with home-row mods (GACS) and layer-tap thumbs.
+  BASE:
+    - [Q, W, E, R, T,    Y, U, I, O, P]
+    - [{t: A, h: Sup}, {t: S, h: Alt}, {t: D, h: Ctl}, {t: F, h: Sft}, G,
+       H, {t: J, h: Sft}, {t: K, h: Ctl}, {t: L, h: Alt}, {t: ";", h: Sup}]
+    - [Z, X, C, V, B,    N, M, ",", ".", "/"]
+    - [{t: Esc, h: MED}, {t: Delete, h: NUM}, {t: BSpace, h: SYM},
+       {t: Space, h: SYM}, {t: Enter, h: NAV}, {t: Tab, h: FUN}]
+
+  # Number layer — hold left primary (Del). Active: right hand.
+  NUM:
+    - [Boot, "", "", "", "",    "/", "7", "8", "9", "-"]
+    - [Sup, Alt, Ctl, Sft, "",  "*", "4", "5", "6", "+"]
+    - ["", "", Lo, Lc, "",      "%", "1", "2", "3", "^"]
+    - ["", "", "",              ".", "0", "="]
+
+  # Navigation layer — hold right primary (Ent). Active: left hand.
+  NAV:
+    - [Paste, Copy, Cut, Undo, Redo,    "", "", "", "", Boot]
+    - [Left, Down, Up, Right, Caps,     "", Sft, Ctl, Alt, Sup]
+    - [Home, PgDn, PgUp, End, Ins,      "", Lc, Lo, "", ""]
+    - ["", "", "",                       "", "", ""]
+
+  # Media layer — hold left tertiary (Esc). Active: right hand.
+  MED:
+    - [Boot, "", "", "", "",       "", "", "", "", ""]
+    - [Sup, Alt, Ctl, Sft, "",     Prev, VolDn, VolUp, Next, ""]
+    - ["", "", Lo, Lc, "",         Play, Stop, Mute, "", ""]
+    - ["", "", "",                  "", "", ""]
+
+  # Function layer — hold right tertiary (Tab). Active: left hand.
+  FUN:
+    - [F12, F7, F8, F9, PrSc,      "", "", "", "", Boot]
+    - [F11, F4, F5, F6, ScLk,      "", Sft, Ctl, Alt, Sup]
+    - [F10, F1, F2, F3, Paus,      "", Lc, Lo, "", ""]
+    - ["", "", "",                  "", "", ""]
+
+  # Symbol layer — bilateral; hold left secondary (Bsp) OR right secondary (Spc).
+  SYM:
+    - ["!", "@", "#", "$", "%",    "^", "&", "[", "]", "|"]
+    - ["*", "_", "-", "=", '"',    ":", "(", ")", "{", "}"]
+    - ["~", "/", "+", "'", "`",    "\\", "→", "<", ">", "?"]
+    - ["", "", "",                  "", "", ""]

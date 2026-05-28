@@ -6,3 +6,7 @@
 [keymaps.ergodox-ez-dinosaur]
 file = "ergodox-ez-dinosaur.yaml"
 keyboard = "Ergodox EZ"
+
+[keymaps.cheapino-dinosaur]
+file = "cheapino-dinosaur.yaml"
+keyboard = "Cheapino"

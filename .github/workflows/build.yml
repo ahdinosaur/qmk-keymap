@@ -15,6 +15,10 @@ jobs:
     with:
       qmk_repo: qmk/qmk_firmware
       qmk_ref: master
+      # Cheapino isn't in mainline QMK; expose the vendored keyboard def
+      # to qmk_firmware via a symlink before the build runs.
+      preparation_command: |
+        ln -sfn "$GITHUB_WORKSPACE/keyboards/cheapino" qmk_firmware/keyboards/cheapino
 
   publish:
     name: Publish

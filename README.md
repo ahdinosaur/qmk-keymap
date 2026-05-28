@@ -8,11 +8,15 @@ Built as a [QMK External Userspace](https://docs.qmk.fm/newbs_external_userspace
 
 ## Layout
 
-See [`keyboards/ergodox_ez/keymaps/dinosaur/keymap.c`](./keyboards/ergodox_ez/keymaps/dinosaur/keymap.c) for the layer mappings.
+See [DESIGN.md](./DESIGN.md) for the layout spec, then the keymap.c per board:
+
+- [`keyboards/ergodox_ez/keymaps/dinosaur/keymap.c`](./keyboards/ergodox_ez/keymaps/dinosaur/keymap.c)
+- [`keyboards/cheapino/keymaps/dinosaur/keymap.c`](./keyboards/cheapino/keymaps/dinosaur/keymap.c)
 
 ## Keyboards
 
 - [Ergodox EZ](https://www.zsa.io/ergodox/)
+- [Cheapino v2](https://github.com/tompi/cheapino) — 36-key 3x5+3 split with RP2040-Zero. Not in mainline QMK; the keyboard definition is vendored here under `keyboards/cheapino/` and `make setup` symlinks it into `qmk_firmware/keyboards/cheapino/` so the QMK CLI can discover it.
 
 ## Setup
 
@@ -42,17 +46,28 @@ You can also drive the underlying make target directly:
 
 ```sh
 make ergodox_ez:dinosaur
+make cheapino:dinosaur
 ```
 
 ## Flash
 
-Put the keyboard into bootloader mode (press the reset button on the back of the right half), then:
+### Ergodox EZ
+
+Press the reset button on the back of the right half, then:
 
 ```sh
 make flash
 ```
 
 GUI alternatives: [Wally](https://www.zsa.io/wally) or [QMK Toolbox](https://github.com/qmk/qmk_toolbox).
+
+### Cheapino
+
+Hold the boot button while tapping reset on the RP2040-Zero (the Cheapino mounts as a USB drive), then:
+
+```sh
+make flash-cheapino
+```
 
 ## keyboard-helper integration
 
@@ -86,8 +101,8 @@ git submodule update --init --recursive
 
 ### Host side
 
-- `keymaps.toml` — manifest with one entry keyed on the firmware-reported `KEYBOARD_HELPER_ID`.
-- `ergodox-ez-dinosaur.yaml` — [keymap-drawer](https://github.com/caksoylar/keymap-drawer) YAML for the six layers (BASE, NUM, NAV, MED, FUN, SYM); layer order and per-layer key order mirror the `LAYOUT_ergodox(...)` argument order in `keymap.c`. Labels are hand-written; if you change the keymap, edit this file too (or regenerate via `keymap-drawer parse`).
+- `keymaps.toml` — manifest with one entry per board, keyed on the firmware-reported `KEYBOARD_HELPER_ID`.
+- `ergodox-ez-dinosaur.yaml` / `cheapino-dinosaur.yaml` — [keymap-drawer](https://github.com/caksoylar/keymap-drawer) YAML for the six layers (BASE, NUM, NAV, MED, FUN, SYM); layer order and per-layer key order mirror the `LAYOUT_…(...)` argument order in the matching `keymap.c`. Labels are hand-written; if you change the keymap, edit this file too (or regenerate via `keymap-drawer parse`).
 
 ### Forking to another board
 
