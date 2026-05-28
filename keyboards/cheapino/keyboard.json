@@ -1,6 +1,6 @@
 {
     "manufacturer": "Thomas Haukland",
-    "keyboard_name": "cheapino2",
+    "keyboard_name": "cheapino",
     "maintainer": "tompi",
     "bootloader": "rp2040",
     "diode_direction": "ROW2COL",

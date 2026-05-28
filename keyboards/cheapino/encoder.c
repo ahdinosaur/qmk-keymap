@@ -16,14 +16,13 @@ void clicked(void) {
 }
 
 void turned(bool clockwise) {
-    if (IS_LAYER_ON(6)) {
+    // Layer numbers refer to the dinosaur keymap's `enum layers` in
+    // `keymaps/dinosaur/keymap.c`: 0=BASE 1=NUM 2=NAV 3=MED 4=FUN 5=SYM.
+    // Non-MED layers fall through to the mouse-wheel default.
+    if (IS_LAYER_ON(3)) {  // MED → volume
         tap_code(clockwise ? KC_VOLU : KC_VOLD);
-    } else if (IS_LAYER_ON(3)) {
-        tap_code16(clockwise ? LCTL(KC_TAB) : LCTL(LSFT(KC_TAB)));
-    } else if (IS_LAYER_ON(5)) {
-        tap_code16(clockwise ? LGUI(KC_Y) : LGUI(KC_Z));
     } else {
-        tap_code16(clockwise ? KC_PGDN : KC_PGUP);
+        tap_code(clockwise ? KC_MS_WH_DOWN : KC_MS_WH_UP);
     }
 }
 

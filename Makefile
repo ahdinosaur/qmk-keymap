@@ -7,9 +7,6 @@ ifeq ($(QMK_USERSPACE),)
     QMK_USERSPACE := $(shell pwd)
 endif
 
-# `qmk config -ro user.qmk_home` prints `user.qmk_home=/path (config)` —
-# strip the trailing ` (config)`/` (default)` annotation, then the `None`
-# sentinel that means "unset".
 # `qmk config -ro user.qmk_home` prints `user.qmk_home=/path (config)`.
 # Pull the path field (between `=` and the first space), then drop the
 # `None` sentinel that means "unset". Avoid parens in the shell here:
