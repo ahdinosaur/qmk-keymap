@@ -64,13 +64,13 @@ Below, **inside** means "toward the hand" and **outside** means "toward the othe
 - `secondary` → the other big thumb key, on the inside (toward the hand).
 - `tertiary` → the bottom small thumb key on the outside (toward the other side).
 
-**Cheapino** (and other 3-thumb-row boards in the Miryoku family — Corne, etc.):
+**Cheapino** (and other 3-thumb-row boards — Corne, etc.):
 
 - `primary` → middle thumb.
-- `secondary` → outside thumb (toward the other side).
-- `tertiary` → inside thumb (toward the hand).
+- `secondary` → inside thumb (toward the hand).
+- `tertiary` → outside thumb (toward the other half).
 
-Note that `secondary` and `tertiary` end up on opposite sides between the two boards. This isn't a contradiction: the labels rank ergonomic preference, and the Ergodox's `secondary` is a big key (more comfortable than any small key) so it stays second-best even on the inside; on a 3-key thumb row all keys are the same size, so accessibility comes down to reach distance and the outside (center-ward) reach wins.
+The Cheapino positions mirror the Ergodox so muscle memory transfers between the two boards. This diverges from the Miryoku convention, which puts `secondary` on the outside thumb on 3-thumb-row boards (where the center-ward reach is shorter); cross-board consistency wins over per-board ergonomic optimization here.
 
 ## Additional features
 

@@ -43,9 +43,10 @@ enum tap_dance_indices {
 
 // LAYOUT_split_3x5_3 argument order (per cheapino's keyboard.json):
 //   30 alphas: row-by-row, each row L pinky→inner then R inner→pinky.
-//   6 thumbs:  L inside (tertiary), L middle (primary), L outside (secondary),
-//              R outside (secondary), R middle (primary), R inside (tertiary).
-// See DESIGN.md §Thumbs for role-to-position mapping on Cheapino.
+//   6 thumbs:  L inside (secondary), L middle (primary), L outside (tertiary),
+//              R outside (tertiary), R middle (primary), R inside (secondary).
+// Role-to-position mirrors the Ergodox EZ (see DESIGN.md §Thumbs): SYM on
+// the inside thumb, NUM/NAV on the middle, MED/FUN on the outside.
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -54,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     HM_A,    HM_S,    HM_D,    HM_F,    KC_G,        KC_H,    HM_J,    HM_K,    HM_L,    HM_SCLN,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-                      LT_ESC,  LT_DEL,  LT_BSP,      LT_SPC,  LT_ENT,  LT_TAB
+                      LT_BSP,  LT_DEL,  LT_ESC,      LT_TAB,  LT_ENT,  LT_SPC
 ),
 
 // NUM — Number layer (right hand active; trigger LT_DEL on left primary thumb).
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TD(TD_BOOT), KC_NO, KC_NO,     KC_NO,      KC_NO,       KC_SLSH, KC_7,    KC_8,    KC_9,    KC_MINS,
     KC_LGUI,     KC_LALT, KC_LCTL, KC_LSFT,    KC_NO,       KC_ASTR, KC_4,    KC_5,    KC_6,    KC_PLUS,
     KC_NO,       KC_NO,   TD(TD_LO), TD(TD_LC), KC_NO,      KC_PERC, KC_1,    KC_2,    KC_3,    KC_CIRC,
-                                  KC_NO,   KC_TRNS, KC_NO,    KC_DOT,  KC_0,    KC_EQL
+                                  KC_NO,   KC_TRNS, KC_NO,    KC_EQL,  KC_0,    KC_DOT
 ),
 
 // NAV — Navigation layer (left hand active; trigger LT_ENT on right primary thumb).
@@ -84,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TD(TD_BOOT), KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
     KC_LGUI,     KC_LALT, KC_LCTL, KC_LSFT, KC_NO,       KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_NO,
     KC_NO,       KC_NO,   TD(TD_LO), TD(TD_LC), KC_NO,   KC_MPLY, KC_MSTP, KC_MUTE, KC_NO,   KC_NO,
-                                  KC_TRNS, KC_NO,   KC_NO,    KC_TRNS, KC_TRNS, KC_TRNS
+                                  KC_NO,   KC_NO,   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
 // FUN — Function layer (left hand active; trigger LT_TAB on right tertiary thumb).
@@ -94,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F12, KC_F7,   KC_F8,   KC_F9,   KC_PSCR,         KC_NO,   KC_NO,   KC_NO,   KC_NO,   TD(TD_BOOT),
     KC_F11, KC_F4,   KC_F5,   KC_F6,   KC_SCRL,         KC_NO,   KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,
     KC_F10, KC_F1,   KC_F2,   KC_F3,   KC_PAUS,         KC_NO,   TD(TD_LC), TD(TD_LO), KC_NO, KC_NO,
-                      KC_TRNS, KC_TRNS, KC_TRNS,        KC_NO,   KC_NO,   KC_TRNS
+                      KC_TRNS, KC_TRNS, KC_TRNS,        KC_TRNS, KC_NO,   KC_NO
 ),
 
 // SYM — Symbol layer (bilateral; triggers LT_BSP on left secondary OR LT_SPC on right secondary).
@@ -103,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_LBRC, KC_RBRC, KC_PIPE,
     KC_ASTR, KC_UNDS, KC_MINS, KC_EQL,  KC_DQT,         KC_COLN, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR,
     KC_TILD, KC_SLSH, KC_PLUS, KC_QUOT, KC_GRV,         KC_BSLS, RIGHT_ARROW, KC_LT, KC_GT, KC_QUES,
-                      KC_NO,   KC_NO,   KC_TRNS,        KC_TRNS, KC_NO,   KC_NO
+                      KC_TRNS, KC_NO,   KC_NO,          KC_NO,   KC_NO,   KC_TRNS
 ),
 
 };

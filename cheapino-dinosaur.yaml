@@ -24,15 +24,15 @@ layers:
     - [{t: A, h: Sup}, {t: S, h: Alt}, {t: D, h: Ctl}, {t: F, h: Sft}, G,
        H, {t: J, h: Sft}, {t: K, h: Ctl}, {t: L, h: Alt}, {t: ";", h: Sup}]
     - [Z, X, C, V, B,    N, M, ",", ".", "/"]
-    - [{t: Esc, h: MED}, {t: Delete, h: NUM}, {t: BSpace, h: SYM},
-       {t: Space, h: SYM}, {t: Enter, h: NAV}, {t: Tab, h: FUN}]
+    - [{t: BSpace, h: SYM}, {t: Delete, h: NUM}, {t: Esc, h: MED},
+       {t: Tab, h: FUN}, {t: Enter, h: NAV}, {t: Space, h: SYM}]
 
   # Number layer — hold left primary (Del). Active: right hand.
   NUM:
     - [Boot, "", "", "", "",    "/", "7", "8", "9", "-"]
     - [Sup, Alt, Ctl, Sft, "",  "*", "4", "5", "6", "+"]
     - ["", "", Lo, Lc, "",      "%", "1", "2", "3", "^"]
-    - ["", "", "",              ".", "0", "="]
+    - ["", "", "",              "=", "0", "."]
 
   # Navigation layer — hold right primary (Ent). Active: left hand.
   NAV:
